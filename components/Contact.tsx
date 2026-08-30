@@ -2,12 +2,6 @@ export default function Contact() {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-content-box fade-up">
-        
-        {/* Upar wala Badge (Original Info) */}
-        <div className="availability-badge">
-          <span className="green-dot"></span>
-          <span>04 — Available for freelance</span>
-        </div>
 
         {/* Main Title (Original Info) */}
         <h2 className="contact-main-title">

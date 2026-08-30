@@ -47,7 +47,7 @@ const services = [
     label: "Brand Identity And Packaging",
     tag: "Packaging",
     title: "Packaging Design",
-    imageUrl: "https://images.unsplash.com/photo-1591228127795-868d91f89198?q=80&w=600&auto=format&fit=crop", 
+    imageUrl: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=600&auto=format&fit=crop", 
     icon: (
       <svg viewBox="0 0 24 24">
         <path d="M12 2l10 5.5v11L12 22 2 18.5v-11L12 2z" />

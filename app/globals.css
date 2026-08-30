@@ -858,7 +858,7 @@ body {
 .about-skills-section {
   background-color: #0b0f19;
   color: #f8fafc;
-  padding: 80px 5%;
+  padding: 0px 5%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1069,12 +1069,11 @@ body {
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 60px; /* Neeche spacing barha di gayi hai */
   font-weight: 300;
   font-style: italic;
   letter-spacing: -0.01em;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .services-sub {

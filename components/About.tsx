@@ -11,6 +11,8 @@ export default function About() {
   return (
     <section className="about-skills-section" id="about">
       <div className="about-skills-container">
+         <h2 className="section-title">About & Skills</h2>
+      <p className="services-sub"></p>
         
         {/* Main 2-Column Grid */}
         <div className="about-skills-grid">
