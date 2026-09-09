@@ -66,16 +66,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* RIGHT: PNG floats on black — no box, no border */}
+      {/* RIGHT: Image with Floating Icons positioned at red circles */}
       <div className="hero-right">
+        {/* Left & Top custom positions */}
+        <div className="floating-icon icon-ps">Ps</div>
+        <div className="floating-icon icon-ai">Ai</div>
+        <div className="floating-icon icon-xd">Xd</div>
+        <div className="floating-icon icon-ae">Ae</div>
+        <div className="floating-icon icon-figma">Fg</div>
+
+        {/* Right side custom positions */}
+        <div className="floating-icon icon-wireframe">📱</div>
+        <div className="floating-icon icon-palette">🎨</div>
+        <div className="floating-icon icon-ux">UX</div>
+
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="hero-photo" src="/images/hero-photo.png" alt="Kiran Maya" />
-        <div className="hero-photo-badge">
-          <span className="badge-line">Graphic Designer</span>
-          <span className="badge-line">
-            <span>Available</span> for freelance
-          </span>
-        </div>
+    
       </div>
     </section>
   );

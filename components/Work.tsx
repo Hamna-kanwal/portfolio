@@ -1,94 +1,150 @@
 "use client";
 
-const services = [
-  {
-    num: "1",
-    label: "Brand Identity",
-    tag: "Identity",
-    title: "Brand Identity",
-    imageUrl: "/images/project-pixo.gif", 
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="18" rx="4" />
-        <circle cx="12" cy="12" r="3.2" />
-        <circle cx="17" cy="7" r="1" />
-      </svg>
-    ),
-  },
-  {
-    num: "2",
-    label: "Logo And Motion",
-    tag: "Animation",
-    title: "Logo And Motion",
-    imageUrl: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=600&auto=format&fit=crop", 
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <path d="M12 3l3 6 6 1-4.5 4.3 1 6.2L12 17.5 6.5 20.5l1-6.2L3 10l6-1 3-6z" />
-      </svg>
-    ),
-  },
-  {
-    num: "3",
-    label: "Website Header Design",
-    tag: "Digital",
-    title: "Website Header Design",
-    imageUrl: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=600&auto=format&fit=crop", 
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <circle cx="6" cy="6.5" r="1" />
-        <circle cx="9" cy="6.5" r="1" />
-      </svg>
-    ),
-  },
-  {
-    num: "4",
-    label: "Brand Identity And Packaging",
-    tag: "Packaging",
-    title: "Packaging Design",
-    imageUrl: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=600&auto=format&fit=crop", 
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2l10 5.5v11L12 22 2 18.5v-11L12 2z" />
-        <polyline points="12 22 12 12.5 2 7.5" />
-        <polyline points="12 12.5 22 7.5" />
-      </svg>
-    ),
-  },
+import { useState } from "react";
+import Link from "next/link";
+import { PROJECTS, GRID_ORDER, ProjectKey } from "@/lib/work-data";
+
+const FILTERS: { label: string; key: "all" | ProjectKey }[] = [
+  { label: "All", key: "all" },
+  { label: "Logo Design", key: "logo" },
+  { label: "Ad Creatives", key: "ad" },
+  { label: "Carousel", key: "carousel" },
+  { label: "LinkedIn", key: "linkedin" },
+  { label: "Print Media", key: "print" },
+  { label: "Brand Identity", key: "brand" },
 ];
 
-export default function ServicesRail() {
-  return (
-    <section className="services-section">
-      <h2 className="section-title">Selected Work</h2>
-      <p className="services-sub"></p>
+export default function Work() {
+  const [activeFilter, setActiveFilter] = useState<"all" | ProjectKey>("all");
 
-      <div className="services-grid-container">
-        {services.map((s) => (
-          <div className="services-col" key={s.num}>
-            <div className="services-pill">
-              <span className="services-num">{s.num}</span>
-              <span className="services-label">{s.label}</span>
-            </div>
-            
-            <div className="services-stem" style={{ height: '16px' }} /> 
-            
-            <div
-              className="services-card has-image"
+  const visibleCards = activeFilter === "all" ? GRID_ORDER : GRID_ORDER.filter((k) => k === activeFilter);
+
+  return (
+    <div className="page-grid" id="work">
+      <div className="page-header fade-up" style={{ marginTop: "10px" }}>
+        <p style={{ color: "var(--blue-bright)", textTransform: "uppercase", fontSize: "12px", letterSpacing: "2px", fontWeight: 700, marginBottom: "8px" }}>Selected Projects</p>
+      </div>
+
+      {/* Horizontal Scrollable Filter Bar with proper spacing */}
+      <div 
+        className="filters fade-up" 
+        style={{ 
+          display: "flex", 
+          justifyContent: "flex-start", 
+          flexWrap: "nowrap", 
+          overflowX: "auto", 
+          gap: "10px", 
+          margin: "20px 0 35px 0",
+          paddingBottom: "8px",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none"
+        }}
+      >
+        {FILTERS.map((f) => {
+          const isActive = activeFilter === f.key;
+          return (
+            <button
+              key={f.key}
+              className={`filter-btn ${isActive ? "active" : ""}`}
+              onClick={() => setActiveFilter(f.key)}
               style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(11, 15, 25, 0.1) 0%, rgba(11, 15, 25, 0.9) 100%), url(${s.imageUrl})`,
+                background: isActive 
+                  ? "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)" 
+                  : "rgba(17, 20, 29, 0.7)",
+                color: isActive ? "#ffffff" : "#94a3b8",
+                border: isActive ? "1px solid #60a5fa" : "1px solid rgba(255, 255, 255, 0.08)",
+                padding: "10px 22px",
+                borderRadius: "30px",
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "0.5px",
+                cursor: "pointer",
+                backdropFilter: "blur(12px)",
+                boxShadow: isActive ? "0 0 15px rgba(59, 130, 246, 0.3)" : "0 4px 12px rgba(0, 0, 0, 0.2)",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                whiteSpace: "nowrap",
+                flexShrink: 0
               }}
             >
-              <div className="services-icon">{s.icon}</div>
-              <div className="services-content-box">
-                <div className="services-tag">{s.tag}</div>
-                <div className="services-title">{s.title}</div>
-              </div>
-            </div>
-          </div>
-        ))}
+              {f.label}
+            </button>
+          );
+        })}
       </div>
-    </section>
+
+      <style jsx>{`
+        .filters::-webkit-scrollbar {
+          display: none;
+        }
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 24px;
+          width: 100%;
+        }
+      `}</style>
+
+      <div className="projects-grid fade-up">
+        {visibleCards.map((key) => {
+          const p = PROJECTS[key];
+          return (
+            <Link 
+              href={`/work/${key}`} 
+              key={key} 
+              className="project-card"
+              style={{
+                border: "1px solid rgba(59, 130, 246, 0.3)", // Border ko halka aur subtle kar diya hai
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.4)",
+                borderRadius: "20px",
+                overflow: "hidden",
+                display: "block",
+                position: "relative",
+                width: "100%",
+                minHeight: "340px",
+                transition: "all 0.3s ease"
+              }}
+            >
+              <div 
+                className="card-count" 
+                style={{ 
+                  position: "absolute", 
+                  top: "16px", 
+                  right: "16px", 
+                  zIndex: 10, 
+                  background: "rgba(17, 20, 29, 0.85)", 
+                  border: "1px solid rgba(96, 165, 250, 0.3)", 
+                  color: "#60a5fa", 
+                  padding: "4px 10px", 
+                  borderRadius: "20px", 
+                  fontSize: "12px",
+                  fontWeight: 600 
+                }}
+              >
+                {p.count}
+              </div>
+
+              <div
+                className="card-visual"
+                style={{
+                  backgroundImage: `linear-gradient(to top, rgba(8,9,12,0.9) 0%, rgba(8,9,12,0.2) 50%, rgba(8,9,12,0.4) 100%), url(${p.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  width: "100%",
+                  height: "100%",
+                  minHeight: "340px",
+                  position: "relative"
+                }}
+              >
+                <div className="card-overlay" style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px" }}>
+                  <p className="card-cat" style={{ color: "#3b82f6", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "4px" }}>{p.cat}</p>
+                  <p className="card-name" style={{ color: "#ffffff", fontSize: "1.2rem", fontWeight: 700, marginBottom: "8px" }}>{p.cardName}</p>
+                  <p className="card-cta" style={{ color: "#60a5fa", fontSize: "13px", fontWeight: 600 }}>View Projects</p>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
   );
 }
