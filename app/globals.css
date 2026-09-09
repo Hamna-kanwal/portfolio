@@ -1472,9 +1472,9 @@ body {
     justify-content: center !important;
   }
 
-  .hero-right :global(.floating-icon) {
-    display: none !important;
-  }
+  .hero-right .floating-icon {
+  display: none !important;
+}
 
   .hero-photo-badge {
     position: relative !important;
