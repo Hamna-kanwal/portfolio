@@ -3,6 +3,9 @@ export type ProjectKey = "logo" | "ad" | "carousel" | "linkedin" | "print" | "br
 export interface GalleryItem {
   img: string;
   label: string;
+  title?: string;
+  desc?: string;
+  tags?: string[];
 }
 
 export interface ProcessStep {
