@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Work from "@/components/Work";
@@ -9,7 +8,6 @@ import ScrollAnimations from "@/components/ScrollAnimations";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <Marquee />
       <Work />

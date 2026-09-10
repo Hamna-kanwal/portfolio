@@ -42,11 +42,11 @@ export default function ProjectDetail({ params }: { params: Promise<{ project: s
   const currentTags = currentGalleryItem && currentGalleryItem.tags ? currentGalleryItem.tags : active.tags;
 
   return (
-    <div className="page-detail" style={{ background: "radial-gradient(circle at top, #11141d 0%, #08090c 100%)", minHeight: "100vh", paddingBottom: "80px" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+    <div className="page-detail" >
+      <div >
         
         {/* Back Button */}
-        <div style={{ paddingTop: "32px", marginBottom: "32px" }}>
+        <div >
           <Link href="/#work" className="back-btn" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#94a3b8", textDecoration: "none", fontWeight: 500, transition: "color 0.2s" }}>
             ← Back to Work
           </Link>

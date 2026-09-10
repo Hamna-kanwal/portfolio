@@ -22,7 +22,7 @@ export default function Work() {
   return (
     <div className="page-grid" id="work">
       <div className="page-header fade-up" style={{ marginTop: "10px" }}>
-        <p style={{ color: "var(--blue-bright)", textTransform: "uppercase", fontSize: "12px", letterSpacing: "2px", fontWeight: 700, marginBottom: "8px" }}>Selected Projects</p>
+         <h2 className="section-title">Selected Work</h2>
       </div>
 
       {/* Horizontal Scrollable Filter Bar with proper spacing */}

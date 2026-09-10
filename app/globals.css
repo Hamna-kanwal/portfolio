@@ -1257,7 +1257,7 @@ body {
 .card-cta::after { content: '→'; color: var(--blue-bright); }
 
 /* ── Detail page ── */
-.page-detail { padding: 7rem 3rem 5rem; min-height: 100vh; background: var(--ink); color: var(--text); font-family: var(--serif); }
+.page-detail { padding: 20px 10px;; }
 .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); background: none; border: none; cursor: pointer; margin-bottom: 3rem; transition: color 0.2s; padding: 0; }
 .back-btn:hover { color: var(--blue-bright); }
 .back-btn::before { content: '←'; }
@@ -1309,8 +1309,9 @@ body {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
 @media(max-width: 768px) {
-  .work-nav { padding: 1rem 1.5rem; }
-  .page-grid, .page-detail { padding: 6rem 1.5rem 4rem; }
+  .work-nav { padding: 1rem 1.5rem; 
+  margin: 0px !important}
+  .page-grid, .page-detail { padding: 0px 13px; }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card.col-7, .project-card.col-5, .project-card.col-4, .project-card.col-8, .project-card.col-6 { grid-column: span 1; }
   .card-overlay { transform: translateY(0); }
@@ -1472,9 +1473,7 @@ body {
     justify-content: center !important;
   }
 
-  .hero-right .floating-icon {
-  display: none !important;
-}
+
 
   .hero-photo-badge {
     position: relative !important;
