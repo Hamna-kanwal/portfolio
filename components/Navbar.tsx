@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar" style={{ display: 'flex', justifyContent: 'center', position: 'relative', alignItems: 'center', padding: '37px 24px', marginBottom: '24px' }}>
+    <nav className="navbar" style={{ display: 'flex', justifyContent: 'center', position: 'relative', alignItems: 'center', padding: '32px 24px', marginBottom: '10px' }}>
       
       {/* Modern Gradient Blue Button for Hamburger/Toggle */}
       <button 
