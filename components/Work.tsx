@@ -78,9 +78,21 @@ export default function Work() {
         }
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 24px;
+          /* Fixed 3 columns layout for desktop (3 top, 3 bottom) */
+          grid-template-columns: repeat(3, 1fr);
+          gap: 28px;
           width: 100%;
+        }
+        /* Responsive fallback for smaller screens */
+        @media (max-width: 900px) {
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .projects-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
 
@@ -93,14 +105,14 @@ export default function Work() {
               key={key} 
               className="project-card"
               style={{
-                border: "1px solid rgba(59, 130, 246, 0.3)", // Border ko halka aur subtle kar diya hai
+                border: "1px solid rgba(59, 130, 246, 0.3)",
                 boxShadow: "0 4px 20px rgba(0, 0, 0, 0.4)",
                 borderRadius: "20px",
                 overflow: "hidden",
                 display: "block",
                 position: "relative",
                 width: "100%",
-                minHeight: "340px",
+                minHeight: "420px", // Card ki height yahan barha di hai
                 transition: "all 0.3s ease"
               }}
             >
@@ -114,7 +126,7 @@ export default function Work() {
                   background: "rgba(17, 20, 29, 0.85)", 
                   border: "1px solid rgba(96, 165, 250, 0.3)", 
                   color: "#60a5fa", 
-                  padding: "4px 10px", 
+                  padding: "6px 12px", 
                   borderRadius: "20px", 
                   fontSize: "12px",
                   fontWeight: 600 
@@ -126,19 +138,19 @@ export default function Work() {
               <div
                 className="card-visual"
                 style={{
-                  backgroundImage: `linear-gradient(to top, rgba(8,9,12,0.9) 0%, rgba(8,9,12,0.2) 50%, rgba(8,9,12,0.4) 100%), url(${p.image})`,
+                  backgroundImage: `linear-gradient(to top, rgba(8,9,12,0.95) 0%, rgba(8,9,12,0.3) 50%, rgba(8,9,12,0.4) 100%), url(${p.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   width: "100%",
                   height: "100%",
-                  minHeight: "340px",
+                  minHeight: "420px", // Visual container ki height bhi update ki hai
                   position: "relative"
                 }}
               >
-                <div className="card-overlay" style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px" }}>
-                  <p className="card-cat" style={{ color: "#3b82f6", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "4px" }}>{p.cat}</p>
-                  <p className="card-name" style={{ color: "#ffffff", fontSize: "1.2rem", fontWeight: 700, marginBottom: "8px" }}>{p.cardName}</p>
-                  <p className="card-cta" style={{ color: "#60a5fa", fontSize: "13px", fontWeight: 600 }}>View Projects</p>
+                <div className="card-overlay" style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px" }}>
+                  <p className="card-cat" style={{ color: "#3b82f6", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "6px" }}>{p.cat}</p>
+                  <p className="card-name" style={{ color: "#ffffff", fontSize: "1.35rem", fontWeight: 700, marginBottom: "8px" }}>{p.cardName}</p>
+                  <p className="card-cta" style={{ color: "#60a5fa", fontSize: "13px", fontWeight: 600 }}>View Projects →</p>
                 </div>
               </div>
             </Link>

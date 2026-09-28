@@ -1487,3 +1487,118 @@ body {
     text-align: center;
   }
 }
+/* All tool icons: same size */
+.hero-right .floating-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Text badges */
+.tool-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  background: none;
+  border: none;
+}
+
+/* SVG logos */
+.tool-svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.figma-svg {
+  width: 20px;
+  height: 30px;
+}
+
+/* Brand colors */
+.tool-ps { color: #31a8ff; }
+.tool-ai { color: #ff9a00; }
+.tool-ui { color: #38bdf8; }
+.tool-ux { color: #ec4899; }
+
+.tool-canva {
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* Make sure .hero-right is the positioning parent */
+.hero-right {
+  position: relative;
+}
+
+/* Positions: closer to the photo */
+.hero-right .icon-ps {
+  inset: auto;
+  top: 8%;
+  left: 24%;
+}
+
+.hero-right .icon-ai {
+  inset: auto;
+  top: 26%;
+  left: 14%;
+}
+
+.hero-right .icon-xd {
+  inset: auto;
+  top: 48%;
+  left: 10%;
+}
+
+.hero-right .icon-ae {
+  inset: auto;
+  top: 68%;
+  left: 20%;
+}
+
+.hero-right .icon-figma {
+  inset: auto;
+  top: 10%;
+  right: 14%;
+}
+
+.hero-right .icon-wireframe {
+  inset: auto;
+  top: 32%;
+  right: 6%;
+}
+
+.hero-right .icon-ux {
+  inset: auto;
+  top: 60%;
+  right: 8%;
+}
+/* CapCut: turn the black logo on white into a white logo on transparent */
+.tool-capcut {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  transform: scale(1.7);
+}
+
+/* Canva icon frame: same blue as the Canva badge */
+.hero-right .icon-xd {
+  border: 1px solid #00c4cc;
+  box-shadow: 0 0 12px rgba(0, 196, 204, 0.55);
+}

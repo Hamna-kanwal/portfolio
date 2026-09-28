@@ -66,23 +66,50 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* RIGHT: Image with Floating Icons positioned at red circles */}
+      {/* RIGHT: Image with tool logos around it */}
       <div className="hero-right">
-        {/* Left & Top custom positions */}
-        <div className="floating-icon icon-ps">Ps</div>
-        <div className="floating-icon icon-ai">Ai</div>
-        <div className="floating-icon icon-xd">Xd</div>
-        <div className="floating-icon icon-ae">Ae</div>
-        <div className="floating-icon icon-figma">Fg</div>
+        {/* Adobe Photoshop */}
+        <div className="floating-icon icon-ps" title="Adobe Photoshop">
+          <span className="tool-badge tool-ps">Ps</span>
+        </div>
 
-        {/* Right side custom positions */}
-        <div className="floating-icon icon-wireframe">📱</div>
-        <div className="floating-icon icon-palette">🎨</div>
-        <div className="floating-icon icon-ux">UX</div>
+        {/* Adobe Illustrator */}
+        <div className="floating-icon icon-ai" title="Adobe Illustrator">
+          <span className="tool-badge tool-ai">Ai</span>
+        </div>
+
+        {/* Canva */}
+        <div className="floating-icon icon-xd" title="Canva">
+          <span className="tool-badge tool-canva">Canva</span>
+        </div>
+{/* CapCut */}
+<div className="floating-icon icon-ae" title="CapCut">
+  {/* eslint-disable-next-line @next/next/no-img-element */}
+  <img src="/images/capcut.png" alt="CapCut" className="tool-capcut" />
+</div>
+        {/* Figma */}
+        <div className="floating-icon icon-figma" title="Figma">
+          <svg className="tool-svg figma-svg" viewBox="0 0 38 57" aria-hidden="true">
+            <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1abcfe" />
+            <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0acf83" />
+            <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#ff7262" />
+            <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#f24e1e" />
+            <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#a259ff" />
+          </svg>
+        </div>
+
+        {/* UI */}
+        <div className="floating-icon icon-wireframe" title="UI Design">
+          <span className="tool-badge tool-ui">UI</span>
+        </div>
+
+        {/* UX */}
+        <div className="floating-icon icon-ux" title="UX Design">
+          <span className="tool-badge tool-ux">UX</span>
+        </div>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="hero-photo" src="/images/hero-photo.png" alt="Kiran Maya" />
-    
       </div>
     </section>
   );
