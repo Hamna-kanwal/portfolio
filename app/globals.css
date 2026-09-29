@@ -1363,7 +1363,7 @@ body {
 }
 
 .icon-ae { 
-  top: 85%; left: 6%; 
+  top: 85%; left: 0%; 
   color: #cc99ff; 
   border: 1px solid #cc99ff; 
   box-shadow: 0 0 12px rgba(204, 153, 255, 0.4); 
