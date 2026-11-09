@@ -53,7 +53,7 @@ export const PROJECTS: Record<ProjectKey, Project> = {
     turnaround: "3–5 Days",
     image: "/images/logo-cover.png",
     gallery: [
-      { img: "/images/logo-three.png", label: "Concept Sketch" },
+      { img: "/images/Logo-three.png", label: "Concept Sketch" },
       { img: "/images/logo-two.png", label: "Icon Mark" },
       { img: "/images/logo-one.png", label: "Wordmark" },
       { img: "/images/san2.jpeg", label: "Color Variations" },
